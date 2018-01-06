@@ -1,5 +1,5 @@
 //
-//  HCBLEConnection.h
+//  ZZBLEConnection.h
 //  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/21.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HCBLEConnection : NSObject
+@interface ZZBLEConnection : NSObject
 
 @property (readonly) NSString *UUIDString;
 

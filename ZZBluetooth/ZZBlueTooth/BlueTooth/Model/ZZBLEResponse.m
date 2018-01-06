@@ -1,14 +1,14 @@
 //
-//  HCBLEResponse.m
-//  虹云智慧生活
+//  ZZBLEResponse.m
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/26.
 //  Copyright © 2017年 HongYun. All rights reserved.
 //
 
 #import "ZZBLEResponse.h"
-#import "HCBLEConfig.h"
-#import "HCBLETaskError.h"
+#import "ZZBLEConfig.h"
+#import "ZZBLETaskError.h"
 
 @interface ZZBLEResponse ()
 
@@ -42,7 +42,7 @@
 }
 
 - (instancetype)init {
-    @throw [NSException exceptionWithName:@"HCBLEResponse init error" reason:@"HCBLEResponse must be initialized with response data. Use 'responseWithData:' instead." userInfo:nil];
+    @throw [NSException exceptionWithName:@"ZZBLEResponse init error" reason:@"ZZBLEResponse must be initialized with response data. Use 'responseWithData:' instead." userInfo:nil];
     return [self initWithData:nil];
 }
 
@@ -69,7 +69,7 @@ unsigned short subdateValueWithRange(NSData *data, unsigned short loc, unsigned 
     if (completData.length >= _layout.length + 1) {
         
         _CODE = subdateValueWithRange(completData, _layout.length, 1);
-        _error = HYErrorWithTaskErrorType(_CODE);
+        _error = ZZErrorWithTaskErrorType(_CODE);
         _isSucceeded = (_CODE == 0);
         
         _contentData = [completData subdataWithRange:NSMakeRange(_layout.length + 1, _LEN - 1)];

@@ -1,73 +1,13 @@
 //
 //  ZZBLERequest.m
-//  虹云智慧生活
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/21.
 //  Copyright © 2017年 HongYun. All rights reserved.
 //
 
-#import "HCBLERequest+Private.h"
-#import "HCBLEConfig.h"
-
-NSString *HYMethodNameOfCommand(HCBLEAPICommand cmd) {
-#define nameMethod(cmdCase, cmdName) case cmdCase: { return cmdName; }
-    switch (cmd) {
-            nameMethod(CMD_Invalid, @"无效命令")
-            nameMethod(CMD_GET_LOCK_INFO, @"获取门锁信息")
-            nameMethod(CMD_GET_VERSION, @"获取版本")
-            nameMethod(CMD_CHECK_TIME, @"获取时间基线")
-            nameMethod(CMD_GET_LOCK_RECORD, @"获取开门记录")
-            nameMethod(CMD_DELETE_LOCK_RECORD, @"删除开门记录")
-            nameMethod(CMD_SET_KEY_EXPAIRE_DATE, @"设置钥匙时限")
-            nameMethod(CMD_GET_KEY_EXPAIRE_DATE, @"获取钥匙时限")
-            
-            nameMethod(CMD_SET_KEY_STATUS, @"设置钥匙状态")
-            nameMethod(CMD_GET_KEY_STATUS, @"获取钥匙状态")
-            nameMethod(CMD_SET_ROTATE_MODE, @"设置电机转动模式")
-            nameMethod(CMD_GET_ROTATE_MODE, @"获取电机转动模式")
-            nameMethod(CMD_SET_PASSWD_UNLOCK_TIMES, @"设置键盘开锁次数")
-            nameMethod(CMD_GET_PASSWD_UNLOCK_TIMES, @"获取键盘开锁次数")
-            
-            nameMethod(CMD_CREATE_SESSION, @"新建会话")
-            nameMethod(CMD_CREATE_KEY, @"创建钥匙")
-            nameMethod(CMD_DELETE_KEY, @"删除钥匙")
-            nameMethod(CMD_UPDATE_KEY, @"更新钥匙")
-            nameMethod(CMD_UNLOCK, @"开锁")
-            nameMethod(CMD_GET_BATTERY, @"获取电量")
-            nameMethod(CMD_GET_UNLOCK_TIMES, @"？？")
-            nameMethod(CMD_RESET, @"重置门锁")
-            nameMethod(CMD_CREATE_FINGER_KEY, @"创建指纹钥匙")
-            nameMethod(CMD_DELETE_FINGER_KEY, @"删除指纹钥匙")
-            nameMethod(CMD_GET_LAST_RESULT, @"获取指纹结果")
-            
-            nameMethod(CMD_RESPONSE, @"响应")
-            
-            nameMethod(CMD_CARD_CREATE_KEY, @"创建卡片钥匙")
-            nameMethod(CMD_CARD_GET_KEYID, @"获取卡片钥匙号")
-            
-            nameMethod(CMD_RING_CONFIG_WIFI, @"配置门铃WiFi")
-            
-            nameMethod(CMD_GATEWAY_CONFIG_WIFI, @"配置WiFi")
-            nameMethod(CMD_GATEWAY_CAN_BE_BIND, @"查询可绑状态")
-            nameMethod(CMD_GATEWAY_GET_SUB_MAC, @"获取MAC地址")
-            
-            //nameMethod(CMD_GUARD_WIFI_CONFIG, @"无效命令") //CMD_GATEWAY_CONFIG_WIFI
-            nameMethod(CMD_GUARD_GET_NETWORK_STATUS, @"获取网络连接状态")
-            
-            nameMethod(CMD_AMMETER_DEPOSITE_ELECTRICITY, @"设置电表电量")
-            nameMethod(CMD_AMMETER_GET_ELECTRICITY, @"获取电表电量")
-            
-            //            nameMethod(CMD_CONFIG_GATEWAY_WIFI, @"无效命令")
-            nameMethod(CMD_DEVICE_CONNECT, @"无效命令")
-            //            nameMethod(CMD_QUERY_BIND_STATUS, @"无效命令") //CMD_GATEWAY_CAN_BE_BIND
-            //            nameMethod(CMD_QUERY_WIFI_MAC, @"无效命令") //CMD_GATEWAY_GET_SUB_MAC
-            
-        default:
-            break;
-    }
-#undef nameMethod
-    return @"命令为空";
-}
+#import "ZZBLERequest+Private.h"
+#import "ZZBLEConfig.h"
 
 static const unsigned short RequestIDMin = 0x0f;
 static const unsigned short RequestIDMax = 0xf0;
@@ -184,7 +124,7 @@ static const char zero[8] = {0};
 }
 
 - (NSString *)methodDesaription {
-    return HYMethodNameOfCommand(self.CMD);
+    return nil;
 }
 
 @end

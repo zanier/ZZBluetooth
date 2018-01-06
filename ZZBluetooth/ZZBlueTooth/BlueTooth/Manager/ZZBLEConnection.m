@@ -1,27 +1,27 @@
 //
-//  HCBLEConnection.m
+//  ZZBLEConnection.m
 //  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/21.
 //  Copyright © 2017年 HongYun. All rights reserved.
 //
 
-#import "HCBLEConnection.h"
-#import "HCBLEManager+Private.h"
-#import "HCBLEConnection+Private.h"
-#import "HCBLEConfig.h"
-#import "HCBLEResponseBuffer.h"
-#import "HCBLETaskError.h"
+#import "ZZBLEConnection.h"
+#import "ZZBLEManager+Private.h"
+#import "ZZBLEConnection+Private.h"
+#import "ZZBLEConfig.h"
+#import "ZZBLEResponseBuffer.h"
+#import "ZZBLETaskError.h"
 
-#define HCLogConnection(...) HCLog(@"<%@> %@", [self identifier], [NSString stringWithFormat:__VA_ARGS__])
+#define ZZLogConnection(...) ZZLog(@"<%@> %@", [self identifier], [NSString stringWithFormat:__VA_ARGS__])
 
-#define HCLogConnectionData(des, data) \
+#define ZZLogConnectionData(des, data) \
 if (data && data.length) {\
 int length = 16;\
 int numberOfLine = data.length / length;\
 int append = data.length % length;\
 numberOfLine += (append) ? 1 : 0;\
-HCLogConnection(des);\
+ZZLogConnection(des);\
 printf("*\n");\
 for (int i = 0; i < numberOfLine; i++) {\
     int loc = i*length;\
@@ -31,12 +31,12 @@ for (int i = 0; i < numberOfLine; i++) {\
 printf("*\n");\
 }\
 
-@interface HCBLEConnection () {
+@interface ZZBLEConnection () {
     
     dispatch_semaphore_t _lock;
     ZZBLETimer *_timer;
     NSMutableDictionary<NSNumber *, ZZBLETask *> *_dispatchDictionary;
-    HCBLEResponseBuffer *_buffer;
+    ZZBLEResponseBuffer *_buffer;
 
     BOOL _readyToWrite;
 }
@@ -47,10 +47,10 @@ printf("*\n");\
 
 @end
 
-@implementation HCBLEConnection
+@implementation ZZBLEConnection
 
 + (instancetype)connectionWithCentral:(CBCentralManager *)central peripheral:(CBPeripheral *)peripheral {
-    HCBLEConnection *connection = [[HCBLEConnection alloc] init];
+    ZZBLEConnection *connection = [[ZZBLEConnection alloc] init];
     connection.central = central;
     peripheral.delegate = connection;
     connection.peripheral = peripheral;
@@ -61,7 +61,7 @@ printf("*\n");\
     if (self = [super init]) {
         _lock = dispatch_semaphore_create(1);
         _dispatchDictionary = [NSMutableDictionary dictionary];
-        _buffer = [[HCBLEResponseBuffer alloc] init];
+        _buffer = [[ZZBLEResponseBuffer alloc] init];
     }
     return self;
 }
@@ -89,7 +89,7 @@ printf("*\n");\
 
 - (void)startConnectTimer {
     if (_connectInterval == 0.0) {
-        _connectInterval = HCBLEDefaultConnectInterval;
+        _connectInterval = ZZBLEDefaultConnectInterval;
     } else if (_connectInterval < 0) {
         return;
     }
@@ -125,7 +125,7 @@ printf("*\n");\
     }
     // connecting
     [self startConnectTimer];
-    HCLogConnection(@"begin connect");
+    ZZLogConnection(@"begin connect");
     [_central connectPeripheral:_peripheral options:nil];
 }
 
@@ -137,7 +137,7 @@ printf("*\n");\
     if (self.state == CBPeripheralStateDisconnected) {
         return;
     }
-    HCLogConnection(@"begin disconnect");
+    ZZLogConnection(@"begin disconnect");
     [_central cancelPeripheralConnection:_peripheral];
     _characteristic = nil;
     _readyToWrite = NO;
@@ -164,7 +164,7 @@ printf("*\n");\
         [self dispatchTableRemoveTask:weakTask];
     };
     
-    HCLogConnection(@"(%@)", task.request.methodDesaription);
+    ZZLogConnection(@"(%@)", task.request.methodDesaription);
     
     [self dispatchTableAddTask:task];
     [task resume];
@@ -173,11 +173,11 @@ printf("*\n");\
         if (_readyToWrite) {
             [self writeData:task.request.completData];
         } else {
-            NSError *error = HYErrorWithTaskErrorType(HCBLEChaNotReady);
+            NSError *error = ZZErrorWithTaskErrorType(ZZBLEChaNotReady);
             [task taskDidFaildWithError:error];
         }
     } else {
-        NSError *error = HYErrorWithTaskErrorType(HCBLEPeriNotConnected);
+        NSError *error = ZZErrorWithTaskErrorType(ZZBLEPeriNotConnected);
         [task taskDidFaildWithError:error];
     }
 }
@@ -200,13 +200,13 @@ printf("*\n");\
     }
     
 #pragma mark - write value
-    HCLogConnectionData(@"write data", data);
+    ZZLogConnectionData(@"write data", data);
     static const NSUInteger subDataLength = 8;
     NSUInteger remainder = data.length % subDataLength;
     NSUInteger times = data.length / subDataLength;
     void (^writeValueWithDataAndRange)(NSData *data, NSRange range) = ^(NSData *data, NSRange range){
         NSData *subData = [data subdataWithRange:range];
-        //HCLogConnection(@"write value :%@", subData);
+        //ZZLogConnection(@"write value :%@", subData);
         [_peripheral writeValue:subData forCharacteristic:_characteristic type:CBCharacteristicWriteWithResponse];
     };
     for (int index = 0; index < times; index++) {
@@ -248,20 +248,20 @@ printf("*\n");\
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *, id> *)advertisementData RSSI:(NSNumber *)RSSI {}
 
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral {
-    HCLogConnection(@"did connect");
+    ZZLogConnection(@"did connect");
     [self stopConnectTimer];
     [_buffer clearBuffer];
 }
 
 - (void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(nullable NSError *)error {
-    HCLogConnection(@"did fail to connect");
+    ZZLogConnection(@"did fail to connect");
     _readyToWrite = NO;
     [self stopConnectTimer];
     _connectFailure ? _connectFailure(peripheral, error) : nil;
 }
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(nullable NSError *)error {
-    HCLogConnection(@"did disconnect");
+    ZZLogConnection(@"did disconnect");
     _readyToWrite = NO;
 }
 
@@ -271,7 +271,7 @@ printf("*\n");\
     static NSArray *_characteriiticUUIDs;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        CBUUID *UUID = [CBUUID UUIDWithString:HCBLECharacteristicUUID];
+        CBUUID *UUID = [CBUUID UUIDWithString:ZZBLECharacteristicUUID];
         _characteriiticUUIDs = @[UUID];
     });
     return _characteriiticUUIDs;
@@ -299,7 +299,7 @@ printf("*\n");\
     }
     
     for (CBService *service in services) {
-        if ([HCBLEServiceUUID isEqualToString:service.UUID.UUIDString]) {
+        if ([ZZBLEServiceUUID isEqualToString:service.UUID.UUIDString]) {
             [peripheral discoverCharacteristics:[self defaultChaUUIDs] forService:service];
             break;
         }
@@ -316,7 +316,7 @@ printf("*\n");\
     }
     
     for (CBCharacteristic *cha in characteristics) {
-        if ([HCBLECharacteristicUUID isEqualToString:cha.UUID.UUIDString]) {
+        if ([ZZBLECharacteristicUUID isEqualToString:cha.UUID.UUIDString]) {
             _characteristic = cha;
             [peripheral setNotifyValue:YES forCharacteristic:cha];
             break;
@@ -330,12 +330,12 @@ printf("*\n");\
     
     if (_readyToWrite) {
         
-        HCLogConnection(@"ready to write");
+        ZZLogConnection(@"ready to write");
         _connectSuccess ? _connectSuccess(_peripheral, _characteristic) : nil;
         
     } else {
         
-        HCLogConnection(@"cannot write error : %@", error);
+        ZZLogConnection(@"cannot write error : %@", error);
         _connectFailure ? _connectFailure(_peripheral, error) : nil;
     }
 }
@@ -354,7 +354,7 @@ printf("*\n");\
         return;
     }
     
-    //HCLogConnection(@"update value %@", data);
+    //ZZLogConnection(@"update value %@", data);
     
     [self didReceiveData:data];
 }
@@ -370,7 +370,7 @@ printf("*\n");\
         ZZBLEResponse *response = responsesArray[index];
         
 #pragma mark - receive value
-        HCLogConnectionData(@"receive data", response.completData);
+        ZZLogConnectionData(@"receive data", response.completData);
 
         ZZBLETask *task = _dispatchDictionary[@(response.ID)];
         

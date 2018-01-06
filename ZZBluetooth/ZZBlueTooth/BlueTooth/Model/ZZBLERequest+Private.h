@@ -1,6 +1,6 @@
 //
-//  HCBLERequest+Private.h
-//  HYBLEDemo
+//  ZZBLERequest+Private.h
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/10/9.
 //  Copyright © 2017年 zz. All rights reserved.

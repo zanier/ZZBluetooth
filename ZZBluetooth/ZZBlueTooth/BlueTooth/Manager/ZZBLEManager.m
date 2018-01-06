@@ -1,18 +1,18 @@
 //
-//  HCBLEManager.m
+//  ZZBLEManager.m
 //  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/21.
 //  Copyright © 2017年 HongYun. All rights reserved.
 //
 
-#import "HCBLEManager+Private.h"
+#import "ZZBLEManager+Private.h"
 #import "ZZBLEConnection+Private.h"
 #import "ZZBLEScanAction.h"
-#import "HCBLETaskError.h"
-#import "HCBLEConfig.h"
+#import "ZZBLETaskError.h"
+#import "ZZBLEConfig.h"
 
-@interface HCBLEManager () <CBCentralManagerDelegate, ZZBLEScanTaskDelegate>
+@interface ZZBLEManager () <CBCentralManagerDelegate, ZZBLEScanTaskDelegate>
 
 @property (nonatomic, strong) NSMutableDictionary<NSString *, ZZBLEConnection *> *connections;
 
@@ -24,12 +24,12 @@
 
 @end
 
-@implementation HCBLEManager
+@implementation ZZBLEManager
 
 static dispatch_semaphore_t _lock;
 
 + (instancetype)shareInstance {
-    static HCBLEManager *instance;
+    static ZZBLEManager *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         if (!instance) {
@@ -47,7 +47,6 @@ static dispatch_semaphore_t _lock;
     
     const char *delegateQueueLabel = [[NSString stringWithFormat:@"%p_bleCentralDelegateQueue", self] cStringUsingEncoding:NSUTF8StringEncoding];
     _delegateQueue = dispatch_queue_create(delegateQueueLabel, DISPATCH_QUEUE_SERIAL);
-    // _central = [[CBCentralManager alloc] initWithDelegate:self queue:_delegateQueue options:@{CBCentralManagerOptionRestoreIdentifierKey:@"HCBLECentral"}];
     _central = [[CBCentralManager alloc] initWithDelegate:self queue:_delegateQueue options:nil];
     
     _logEnable = YES;
@@ -99,7 +98,7 @@ static dispatch_semaphore_t _lock;
 }
 
 - (void)scan {
-    HCLog(@"central start scan <%@>...", _scanTask.targetName);
+    ZZLog(@"central start scan <%@>...", _scanTask.targetName);
     [_scanTask startScanTimer];
     [_central scanForPeripheralsWithServices:[self defaulutServices]
                                      options:@{CBCentralManagerScanOptionAllowDuplicatesKey : @(_scanTask.duplicate)}];
@@ -109,14 +108,14 @@ static dispatch_semaphore_t _lock;
     static NSArray *_services;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        CBUUID *UUID = [CBUUID UUIDWithString:HCBLEServiceUUID];
+        CBUUID *UUID = [CBUUID UUIDWithString:ZZBLEServiceUUID];
         _services = @[UUID];
     });
     return _services;
 }
 
 - (void)stopScan {
-    HCLog(@"central stop scan!");
+    ZZLog(@"central stop scan!");
     [_central stopScan];
 }
 
@@ -130,7 +129,7 @@ static dispatch_semaphore_t _lock;
                 timeout:(ZZBLEConnectTimeout)connectTimeout
 {
     if (isAnEmptyString(uuidString)) {
-        NSError *error = HYErrorWithTaskErrorType(HCBLEWithoutUUID);
+        NSError *error = ZZErrorWithTaskErrorType(ZZBLEWithoutUUID);
         connectFailure ? connectFailure(nil, error) : nil;
         return;
     }
@@ -184,15 +183,15 @@ static dispatch_semaphore_t _lock;
         return;
     }
     if (self.centralState != CBManagerStatePoweredOn) {
-        HCLog(@"cetral state %@", HCBLECentralSateDescription(_central.state));
-        NSError *error = HYErrorWithTaskErrorType(HCBLECentralNotPowerOn);
+        ZZLog(@"cetral state %@", ZZBLECentralSateDescription(_central.state));
+        NSError *error = ZZErrorWithTaskErrorType(ZZBLECentralNotPowerOn);
         [task taskDidFaildWithError:error];
         return;
     }
     ZZBLEConnection *connection = [self connectionWithUUIDString:task.UUIDString];
     if (!connection) {
-        HCLog(@"connect peripheral and set characteristic notified first!");
-        NSError *error = HYErrorWithTaskErrorType(HCBLEPeriNotConnected);
+        ZZLog(@"connect peripheral and set characteristic notified first!");
+        NSError *error = ZZErrorWithTaskErrorType(ZZBLEPeriNotConnected);
         [task taskDidFaildWithError:error];
         return;
     }
@@ -240,7 +239,7 @@ static dispatch_semaphore_t _lock;
     return connection;
 }
 
-#pragma mark - <HCBLEScanTaskDelegate>
+#pragma mark - <ZZBLEScanTaskDelegate>
 
 - (void)scanTaskDidFinishScan:(ZZBLEScanAction *)task discovered:(BOOL)didDiscover {
     
@@ -258,7 +257,7 @@ static dispatch_semaphore_t _lock;
 #pragma mark - <CBCentralManagerDelegate>
 
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central {
-    HCLog(@"central manager did update state : %@", HCBLECentralSateDescription(central.state));
+    ZZLog(@"central manager did update state : %@", ZZBLECentralSateDescription(central.state));
     if ([self centralIsPowerOn]) {
         if (_scanTask && _scanTask.scanDidFinsh && _scanTask.scanDidDiscover) {
             [self scan];
@@ -270,7 +269,7 @@ static dispatch_semaphore_t _lock;
 
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *, id> *)advertisementData RSSI:(NSNumber *)RSSI {
     
-    if (!HCBLECheckValidRSSI(RSSI)) {
+    if (!ZZBLECheckValidRSSI(RSSI)) {
         return;
     }
     

@@ -1,14 +1,14 @@
 //
-//  NSString+HYTranform.m
-//  HYBLEDemo
+//  NSString+ZZTranform.m
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/27.
 //  Copyright © 2017年 zz. All rights reserved.
 //
 
-#import "NSString+HYTranform.h"
+#import "NSString+ZZTranform.h"
 
-@implementation NSString (HYTranform)
+@implementation NSString (ZZTranform)
 
 - (NSData *)hexToBytes {
     NSMutableData *data = [NSMutableData data];

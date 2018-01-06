@@ -1,6 +1,6 @@
 //
 //  ZZBLEConnection+Private.h
-//  HYBLEDemo
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/10/9.
 //  Copyright © 2017年 zz. All rights reserved.
@@ -15,12 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) NSTimeInterval connectInterval;
 
-@property (nonatomic, copy) HCBLEConnectSuccess connectSuccess;
-@property (nonatomic, copy) HCBLEConnectFailure connectFailure;
-@property (nonatomic, copy) HCBLEConnectTimeout connectTimeout;
-@property (nonatomic, copy) HCBLEDidReadRSSI didReadRSSI;
+@property (nonatomic, copy) ZZBLEConnectSuccess connectSuccess;
+@property (nonatomic, copy) ZZBLEConnectFailure connectFailure;
+@property (nonatomic, copy) ZZBLEConnectTimeout connectTimeout;
+@property (nonatomic, copy) ZZBLEDidReadRSSI didReadRSSI;
 
-+ (instancetype)connectionWithCentral:(CBCentralManager *)central peripheral:(CBPeripheral *)peripheral;
++ (instancetype)connectionWithCentral:(CBCentralManager *)central
+                           peripheral:(CBPeripheral *)peripheral;
 
 - (void)connect;
 - (void)disconnect;

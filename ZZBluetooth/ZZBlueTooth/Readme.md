@@ -1,16 +1,16 @@
-## HCBluetooth 
+## ZZBluetooth
 
 虹云蓝牙设备 iOS_SDK v1.0.1，2017-10-15。
 
 ## 1. 如何使用
 
-1. 导入**\<HCBluetooth\>**框架。
+1. 导入**\<ZZBluetooth\>**框架。
 2. 导入**\<CoreBluetooth/CoreBluetooth.h\>**框架。
-3. 导入头文件**#import\<HCBluetooth/HCBluetooth.h\>**
+3. 导入头文件**#import\<ZZBluetooth/ZZBluetooth.h\>**
 4. 在**info.plist**文件中添加“**Privacy - Bluetooth Peripheral Usage Description**”一项，value为应用向用户申请蓝牙使用权限的描述。
 
 
-## 2. HCBLEManager
+## 2. ZZBLEManager
 
 蓝牙操作对象，用于实现蓝牙的扫描、连接等操作。
 
@@ -21,7 +21,7 @@
 ```
 + (instancetype)shareInstance;
 
-[HCBLEManager shareInstance];
+[ZZBLEManager shareInstance];
 
 ```
 
@@ -31,8 +31,8 @@
 ### 2.2 扫描设备
 
 ```
-typedef BOOL(^HCBLEScanDidDiscover)(CBPeripheral *peripheral, NSDictionary<NSString *, id> *advertisementData, NSNumber *RSSI);
-typedef void(^HCBLEScanDidFinish)(NSString *targetName, BOOL didDiscover);
+typedef BOOL(^ZZBLEScanDidDiscover)(CBPeripheral *peripheral, NSDictionary<NSString *, id> *advertisementData, NSNumber *RSSI);
+typedef void(^ZZBLEScanDidFinish)(NSString *targetName, BOOL didDiscover);
 
 /**
  扫描周围蓝牙重端设备(peripheral)
@@ -40,8 +40,8 @@ typedef void(^HCBLEScanDidFinish)(NSString *targetName, BOOL didDiscover);
 - (void)scanWithName:(NSString *)name
            duplicate:(BOOL)duplicate
         scanInterval:(NSTimeInterval)interval
-         didDiscover:(HCBLEScanDidDiscover)discoverAndContinue
-           didFinish:(HCBLEScanDidFinish)didFinish;
+         didDiscover:(ZZBLEScanDidDiscover)discoverAndContinue
+           didFinish:(ZZBLEScanDidFinish)didFinish;
 
 ```
 
@@ -71,9 +71,9 @@ typedef void(^HCBLEScanDidFinish)(NSString *targetName, BOOL didDiscover);
  连接蓝牙设备
  */
 - (void)connectWithUUID:(NSString *)uuidString
-                success:(HCBLEConnectSuccess)connectSuccess
-                failure:(HCBLEConnectFailure)connectFailure
-                timeout:(HCBLEConnectTimeout)connectTimeout;
+                success:(ZZBLEConnectSuccess)connectSuccess
+                failure:(ZZBLEConnectFailure)connectFailure
+                timeout:(ZZBLEConnectTimeout)connectTimeout;
 ```
 
 | 参数 				| 描述				|
@@ -94,7 +94,7 @@ typedef void(^HCBLEScanDidFinish)(NSString *targetName, BOOL didDiscover);
 
 > 由于一个蓝牙设备可能被多个应用使用，在一个应用要求断开连接后，手机会与设备的连接状态会保持一段时间，直到确认无应用使用该设备后才真正断开连接。蓝牙设备的断开连接过程不是实时的，但对于当前应用来说，设备的状态会及时更新为断开，可以认为连接已经断开。
 
-## 3. HCBLEAPI
+## 3. ZZBLEAPI
 
 该文件封装了设备的蓝牙业务接口。
 
@@ -112,10 +112,10 @@ typedef void(^HCBLEScanDidFinish)(NSString *targetName, BOOL didDiscover);
  @param timeout 任务超时的回调
  @return 请求任务
  */
-+ (HCBLETask *)lock_getInfoWithUUIDString:(NSString *)UUIDString
++ (ZZBLETask *)lock_getInfoWithUUIDString:(NSString *)UUIDString
                               taskSuccess:(void (^)(BOOL battery, NSUInteger recordCount, BOOL timeAccurate))success
-                              taskFailure:(HCBLEAPIFailure)failure
-                              taskTimeout:(HCBLEAPITimeout)timeout;
+                              taskFailure:(ZZBLEAPIFailure)failure
+                              taskTimeout:(ZZBLEAPITimeout)timeout;
 ```
 
 在调用接口前，需先连接设备。在调用结束后，建议执行断开连接操作，减少对设备的占用。若未断开连接，设备端一段时间未收到数据则主动断开连接。
@@ -127,36 +127,36 @@ typedef void(^HCBLEScanDidFinish)(NSString *targetName, BOOL didDiscover);
 ```
 NSString *uuidString = @"****";
 
-[[HCBLEManager shareInstance] connectWithUUID:uuidString success:^(CBPeripheral * _Nonnull peripheral, CBCharacteristic * _Nonnull characteristic) {
+[[ZZBLEManager shareInstance] connectWithUUID:uuidString success:^(CBPeripheral * _Nonnull peripheral, CBCharacteristic * _Nonnull characteristic) {
 
     /* 1、连接设备成功 */
     
-    [HCBLEAPI lock_getInfoWithUUIDString:uuidString taskSuccess:^(BOOL battery, NSUInteger recordCount, BOOL timeAccurate) {
+    [ZZBLEAPI lock_getInfoWithUUIDString:uuidString taskSuccess:^(BOOL battery, NSUInteger recordCount, BOOL timeAccurate) {
     
         /* 2、接口执行成功 */
         /*
          执行业务操作或调用其他接口
          */
         /* 3、断开连接 */
-        [[HCBLEManager shareInstance] cancelConnectionWithUUID:uuidString];
+        [[ZZBLEManager shareInstance] cancelConnectionWithUUID:uuidString];
         
     } taskFailure:^(NSError * _Nonnull error) {
     
-        /* 2、接口执行失败，错误详情见`HCBLETaskError.h` */
+        /* 2、接口执行失败，错误详情见`ZZBLETaskError.h` */
         /* 3、断开连接 */
-        [[HCBLEManager shareInstance] cancelConnectionWithUUID:uuidString];
+        [[ZZBLEManager shareInstance] cancelConnectionWithUUID:uuidString];
         
     } taskTimeout:^{
     
         /* 2、接口执行超时 */
 		 /* 3、断开连接 */
-        [[HCBLEManager shareInstance] cancelConnectionWithUUID:uuidString];
+        [[ZZBLEManager shareInstance] cancelConnectionWithUUID:uuidString];
         
     }];
     
 } failure:^(CBPeripheral * _Nullable peripheral, NSError * _Nonnull error) {
 
-    /* 1、连接设备失败，错误详情见`HCBLETaskError.h` */
+    /* 1、连接设备失败，错误详情见`ZZBLETaskError.h` */
     
 } timeout:^(CBPeripheral * _Nullable peripheral) {
 
@@ -167,4 +167,4 @@ NSString *uuidString = @"****";
 
 ### 3.3 错误码
 
-详见文件`"HCBLETaskError.h"`。
+详见文件`"ZZBLETaskError.h"`。

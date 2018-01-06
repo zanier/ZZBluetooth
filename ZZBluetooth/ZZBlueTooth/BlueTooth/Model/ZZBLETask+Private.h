@@ -1,6 +1,6 @@
 //
-//  HCBLETask+Private.h
-//  HYBLEDemo
+//  ZZBLETask+Private.h
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/10/9.
 //  Copyright © 2017年 zz. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import "ZZBLETask.h"
 #import "ZZBLEResponse.h"
-#import "HCBLERequest+Private.h"
+#import "ZZBLERequest+Private.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -1,16 +1,16 @@
 //
-//  HYBLEScanAction.m
-//  虹云智慧生活
+//  ZZBLEScanAction.m
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/25.
 //  Copyright © 2017年 HongYun. All rights reserved.
 //
 
 #import "ZZBLEScanAction.h"
-#import "HCBLEManager.h"
+#import "ZZBLEManager.h"
 
 @implementation ZZBLEScanAction {
-    HCBLETimer *_timer;
+    ZZBLETimer *_timer;
 }
 
 - (BOOL)taskIsValid {
@@ -23,7 +23,7 @@
     
     if (_scanInterval == 0.0) {
         
-        _scanInterval = HCBLEDefaultScanInterval;
+        _scanInterval = ZZBLEDefaultScanInterval;
         
     } else if (_scanInterval < 0) {
         
@@ -31,7 +31,7 @@
         
     }
     
-    _timer = [HCBLETimer timerWithTimeInterval:_scanInterval
+    _timer = [ZZBLETimer timerWithTimeInterval:_scanInterval
                                         target:self
                                       selector:@selector(callTimeout)
                                        repeats:NO];

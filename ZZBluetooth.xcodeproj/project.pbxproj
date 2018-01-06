@@ -9,12 +9,22 @@
 /* Begin PBXBuildFile section */
 		3A21855F2000B102005A9CB2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A21855E2000B102005A9CB2 /* AppDelegate.m */; };
 		3A2185622000B102005A9CB2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2185612000B102005A9CB2 /* ViewController.m */; };
-		3A2185652000B102005A9CB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A2185632000B102005A9CB2 /* Main.storyboard */; };
 		3A2185672000B102005A9CB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A2185662000B102005A9CB2 /* Assets.xcassets */; };
 		3A21856A2000B102005A9CB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A2185682000B102005A9CB2 /* LaunchScreen.storyboard */; };
 		3A21856D2000B102005A9CB2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A21856C2000B102005A9CB2 /* main.m */; };
 		3A2185772000B103005A9CB2 /* ZZBluetoothTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2185762000B103005A9CB2 /* ZZBluetoothTests.m */; };
 		3A2185822000B103005A9CB2 /* ZZBluetoothUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2185812000B103005A9CB2 /* ZZBluetoothUITests.m */; };
+		3A2185DD2000B13E005A9CB2 /* ZZBLEConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2185942000B13E005A9CB2 /* ZZBLEConnection.m */; };
+		3A2185DE2000B13E005A9CB2 /* ZZBLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2185972000B13E005A9CB2 /* ZZBLEManager.m */; };
+		3A2185DF2000B13E005A9CB2 /* ZZBLEResponseBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2185992000B13E005A9CB2 /* ZZBLEResponseBuffer.m */; };
+		3A2185E02000B13E005A9CB2 /* ZZBLERequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A21859D2000B13E005A9CB2 /* ZZBLERequest.m */; };
+		3A2185E12000B13E005A9CB2 /* ZZBLEResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A21859F2000B13E005A9CB2 /* ZZBLEResponse.m */; };
+		3A2185E22000B13E005A9CB2 /* ZZBLEScanAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2185A12000B13E005A9CB2 /* ZZBLEScanAction.m */; };
+		3A2185E32000B13E005A9CB2 /* ZZBLETask.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2185A42000B13E005A9CB2 /* ZZBLETask.m */; };
+		3A2185E42000B13E005A9CB2 /* ZZBLETimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2185AA2000B13E005A9CB2 /* ZZBLETimer.m */; };
+		3A2185F32000B13E005A9CB2 /* NSData+ZZTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2185D52000B13E005A9CB2 /* NSData+ZZTransform.m */; };
+		3A2185F52000B13E005A9CB2 /* NSString+ZZTranform.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A2185D92000B13E005A9CB2 /* NSString+ZZTranform.m */; };
+		3A2185F72000B13E005A9CB2 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 3A2185DC2000B13E005A9CB2 /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +50,6 @@
 		3A21855E2000B102005A9CB2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3A2185602000B102005A9CB2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3A2185612000B102005A9CB2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3A2185642000B102005A9CB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A2185662000B102005A9CB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A2185692000B102005A9CB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A21856B2000B102005A9CB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +60,34 @@
 		3A21857D2000B103005A9CB2 /* ZZBluetoothUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZBluetoothUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2185812000B103005A9CB2 /* ZZBluetoothUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZBluetoothUITests.m; sourceTree = "<group>"; };
 		3A2185832000B103005A9CB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A2185922000B13E005A9CB2 /* ZZBLEConnection+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZZBLEConnection+Private.h"; sourceTree = "<group>"; };
+		3A2185932000B13E005A9CB2 /* ZZBLEConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLEConnection.h; sourceTree = "<group>"; };
+		3A2185942000B13E005A9CB2 /* ZZBLEConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLEConnection.m; sourceTree = "<group>"; };
+		3A2185952000B13E005A9CB2 /* ZZBLEManager+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZZBLEManager+Private.h"; sourceTree = "<group>"; };
+		3A2185962000B13E005A9CB2 /* ZZBLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLEManager.h; sourceTree = "<group>"; };
+		3A2185972000B13E005A9CB2 /* ZZBLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLEManager.m; sourceTree = "<group>"; };
+		3A2185982000B13E005A9CB2 /* ZZBLEResponseBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLEResponseBuffer.h; sourceTree = "<group>"; };
+		3A2185992000B13E005A9CB2 /* ZZBLEResponseBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLEResponseBuffer.m; sourceTree = "<group>"; };
+		3A21859B2000B13E005A9CB2 /* ZZBLERequest+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZZBLERequest+Private.h"; sourceTree = "<group>"; };
+		3A21859C2000B13E005A9CB2 /* ZZBLERequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLERequest.h; sourceTree = "<group>"; };
+		3A21859D2000B13E005A9CB2 /* ZZBLERequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLERequest.m; sourceTree = "<group>"; };
+		3A21859E2000B13E005A9CB2 /* ZZBLEResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLEResponse.h; sourceTree = "<group>"; };
+		3A21859F2000B13E005A9CB2 /* ZZBLEResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLEResponse.m; sourceTree = "<group>"; };
+		3A2185A02000B13E005A9CB2 /* ZZBLEScanAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLEScanAction.h; sourceTree = "<group>"; };
+		3A2185A12000B13E005A9CB2 /* ZZBLEScanAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLEScanAction.m; sourceTree = "<group>"; };
+		3A2185A22000B13E005A9CB2 /* ZZBLETask+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZZBLETask+Private.h"; sourceTree = "<group>"; };
+		3A2185A32000B13E005A9CB2 /* ZZBLETask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLETask.h; sourceTree = "<group>"; };
+		3A2185A42000B13E005A9CB2 /* ZZBLETask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLETask.m; sourceTree = "<group>"; };
+		3A2185A72000B13E005A9CB2 /* ZZBLEConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLEConfig.h; sourceTree = "<group>"; };
+		3A2185A82000B13E005A9CB2 /* ZZBLETaskError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLETaskError.h; sourceTree = "<group>"; };
+		3A2185A92000B13E005A9CB2 /* ZZBLETimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLETimer.h; sourceTree = "<group>"; };
+		3A2185AA2000B13E005A9CB2 /* ZZBLETimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLETimer.m; sourceTree = "<group>"; };
+		3A2185AB2000B13E005A9CB2 /* ZZBlueTooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBlueTooth.h; sourceTree = "<group>"; };
+		3A2185D42000B13E005A9CB2 /* NSData+ZZTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ZZTransform.h"; sourceTree = "<group>"; };
+		3A2185D52000B13E005A9CB2 /* NSData+ZZTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ZZTransform.m"; sourceTree = "<group>"; };
+		3A2185D82000B13E005A9CB2 /* NSString+ZZTranform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZZTranform.h"; sourceTree = "<group>"; };
+		3A2185D92000B13E005A9CB2 /* NSString+ZZTranform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZZTranform.m"; sourceTree = "<group>"; };
+		3A2185DC2000B13E005A9CB2 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +140,9 @@
 			children = (
 				3A21855D2000B102005A9CB2 /* AppDelegate.h */,
 				3A21855E2000B102005A9CB2 /* AppDelegate.m */,
+				3A21858F2000B13E005A9CB2 /* ZZBlueTooth */,
 				3A2185602000B102005A9CB2 /* ViewController.h */,
 				3A2185612000B102005A9CB2 /* ViewController.m */,
-				3A2185632000B102005A9CB2 /* Main.storyboard */,
 				3A2185662000B102005A9CB2 /* Assets.xcassets */,
 				3A2185682000B102005A9CB2 /* LaunchScreen.storyboard */,
 				3A21856B2000B102005A9CB2 /* Info.plist */,
@@ -130,6 +167,73 @@
 				3A2185832000B103005A9CB2 /* Info.plist */,
 			);
 			path = ZZBluetoothUITests;
+			sourceTree = "<group>";
+		};
+		3A21858F2000B13E005A9CB2 /* ZZBlueTooth */ = {
+			isa = PBXGroup;
+			children = (
+				3A2185AB2000B13E005A9CB2 /* ZZBlueTooth.h */,
+				3A2185DC2000B13E005A9CB2 /* Readme.md */,
+				3A2185902000B13E005A9CB2 /* BlueTooth */,
+			);
+			path = ZZBlueTooth;
+			sourceTree = "<group>";
+		};
+		3A2185902000B13E005A9CB2 /* BlueTooth */ = {
+			isa = PBXGroup;
+			children = (
+				3A2185912000B13E005A9CB2 /* Manager */,
+				3A21859A2000B13E005A9CB2 /* Model */,
+				3A2185A52000B13E005A9CB2 /* Utils */,
+			);
+			path = BlueTooth;
+			sourceTree = "<group>";
+		};
+		3A2185912000B13E005A9CB2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3A2185922000B13E005A9CB2 /* ZZBLEConnection+Private.h */,
+				3A2185932000B13E005A9CB2 /* ZZBLEConnection.h */,
+				3A2185942000B13E005A9CB2 /* ZZBLEConnection.m */,
+				3A2185952000B13E005A9CB2 /* ZZBLEManager+Private.h */,
+				3A2185962000B13E005A9CB2 /* ZZBLEManager.h */,
+				3A2185972000B13E005A9CB2 /* ZZBLEManager.m */,
+				3A2185982000B13E005A9CB2 /* ZZBLEResponseBuffer.h */,
+				3A2185992000B13E005A9CB2 /* ZZBLEResponseBuffer.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		3A21859A2000B13E005A9CB2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A21859B2000B13E005A9CB2 /* ZZBLERequest+Private.h */,
+				3A21859C2000B13E005A9CB2 /* ZZBLERequest.h */,
+				3A21859D2000B13E005A9CB2 /* ZZBLERequest.m */,
+				3A21859E2000B13E005A9CB2 /* ZZBLEResponse.h */,
+				3A21859F2000B13E005A9CB2 /* ZZBLEResponse.m */,
+				3A2185A02000B13E005A9CB2 /* ZZBLEScanAction.h */,
+				3A2185A12000B13E005A9CB2 /* ZZBLEScanAction.m */,
+				3A2185A22000B13E005A9CB2 /* ZZBLETask+Private.h */,
+				3A2185A32000B13E005A9CB2 /* ZZBLETask.h */,
+				3A2185A42000B13E005A9CB2 /* ZZBLETask.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A2185A52000B13E005A9CB2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3A2185A82000B13E005A9CB2 /* ZZBLETaskError.h */,
+				3A2185A72000B13E005A9CB2 /* ZZBLEConfig.h */,
+				3A2185A92000B13E005A9CB2 /* ZZBLETimer.h */,
+				3A2185AA2000B13E005A9CB2 /* ZZBLETimer.m */,
+				3A2185D42000B13E005A9CB2 /* NSData+ZZTransform.h */,
+				3A2185D52000B13E005A9CB2 /* NSData+ZZTransform.m */,
+				3A2185D82000B13E005A9CB2 /* NSString+ZZTranform.h */,
+				3A2185D92000B13E005A9CB2 /* NSString+ZZTranform.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +344,7 @@
 			files = (
 				3A21856A2000B102005A9CB2 /* LaunchScreen.storyboard in Resources */,
 				3A2185672000B102005A9CB2 /* Assets.xcassets in Resources */,
-				3A2185652000B102005A9CB2 /* Main.storyboard in Resources */,
+				3A2185F72000B13E005A9CB2 /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,9 +369,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A2185E42000B13E005A9CB2 /* ZZBLETimer.m in Sources */,
 				3A2185622000B102005A9CB2 /* ViewController.m in Sources */,
 				3A21856D2000B102005A9CB2 /* main.m in Sources */,
+				3A2185DD2000B13E005A9CB2 /* ZZBLEConnection.m in Sources */,
+				3A2185E32000B13E005A9CB2 /* ZZBLETask.m in Sources */,
+				3A2185F52000B13E005A9CB2 /* NSString+ZZTranform.m in Sources */,
+				3A2185DE2000B13E005A9CB2 /* ZZBLEManager.m in Sources */,
 				3A21855F2000B102005A9CB2 /* AppDelegate.m in Sources */,
+				3A2185E02000B13E005A9CB2 /* ZZBLERequest.m in Sources */,
+				3A2185DF2000B13E005A9CB2 /* ZZBLEResponseBuffer.m in Sources */,
+				3A2185F32000B13E005A9CB2 /* NSData+ZZTransform.m in Sources */,
+				3A2185E22000B13E005A9CB2 /* ZZBLEScanAction.m in Sources */,
+				3A2185E12000B13E005A9CB2 /* ZZBLEResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,14 +417,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3A2185632000B102005A9CB2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A2185642000B102005A9CB2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3A2185682000B102005A9CB2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -433,10 +539,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56K2M8B4JP;
 				INFOPLIST_FILE = ZZBluetooth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.ZZBluetooth.ZZBluetooth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -447,10 +554,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56K2M8B4JP;
 				INFOPLIST_FILE = ZZBluetooth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.ZZBluetooth.ZZBluetooth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,17 +1,14 @@
 //
 //  ZZBLERequest.h
-//  虹云智慧生活
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/21.
 //  Copyright © 2017年 HongYun. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "HCBLEAPICommand.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-extern NSString *HYMethodNameOfCommand(HCBLEAPICommand cmd);
 
 @interface ZZBLERequest : NSObject
 

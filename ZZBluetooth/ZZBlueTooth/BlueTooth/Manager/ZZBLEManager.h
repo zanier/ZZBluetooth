@@ -1,5 +1,5 @@
 //
-//  HCBLEManager.h
+//  ZZBLEManager.h
 //  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/21.
@@ -20,10 +20,10 @@ typedef void(^ZZBLEConnectFailure)(CBPeripheral * _Nullable peripheral, NSError 
 typedef void(^ZZBLEConnectTimeout)(CBPeripheral * _Nullable peripheral);
 typedef void(^ZZBLEDidReadRSSI)(NSNumber *RSSI, NSError *_Nullable error);
 
-@interface HCBLEManager : NSObject
+@interface ZZBLEManager : NSObject
 
 /**
- HCBluetooth 打印信息开关，默认为YES。设置为NO以取消蓝牙的打印信息。
+ ZZBluetooth 打印信息开关，默认为YES。设置为NO以取消蓝牙的打印信息。
  */
 @property (nonatomic, assign) BOOL logEnable;
 
@@ -32,7 +32,7 @@ typedef void(^ZZBLEDidReadRSSI)(NSNumber *RSSI, NSError *_Nullable error);
 - (ZZBLEConnection *)connectionWithUUIDString:(NSString *)UUIDString;
 
 /**
- 生成HCBLEManager单例对象，通过该对象进行蓝牙的扫描、连接等操作。在生成单例时，若当前蓝牙为开启状态，则会对蓝牙进行初始化操作，该操作需要持续几秒，在初始化过程中不能对蓝牙进行操作。建议在使用蓝牙之前提前创建该单例对象。
+ 生成ZZBLEManager单例对象，通过该对象进行蓝牙的扫描、连接等操作。在生成单例时，若当前蓝牙为开启状态，则会对蓝牙进行初始化操作，该操作需要持续几秒，在初始化过程中不能对蓝牙进行操作。建议在使用蓝牙之前提前创建该单例对象。
 
  @return 生成的单例对象。
  */

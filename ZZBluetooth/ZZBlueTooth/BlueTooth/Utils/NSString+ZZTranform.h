@@ -1,6 +1,6 @@
 //
-//  NSString+HYTranform.h
-//  HYBLEDemo
+//  NSString+ZZTranform.h
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/27.
 //  Copyright © 2017年 zz. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (HYTranform)
+@interface NSString (ZZTranform)
 
 /**
  将纯十六进制的字符串转化为相应的二进制数据。

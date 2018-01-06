@@ -1,15 +1,15 @@
 //
-//  HCBLEResponseBuffer.m
+//  ZZBLEResponseBuffer.m
 //  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/26.
 //  Copyright © 2017年 HongYun. All rights reserved.
 //
 
-#import "HCBLEResponseBuffer.h"
-#import "HCBLEConfig.h"
+#import "ZZBLEResponseBuffer.h"
+#import "ZZBLEConfig.h"
 
-@interface HCBLEResponseBuffer () {
+@interface ZZBLEResponseBuffer () {
     NSUInteger _recieveLen;
     NSMutableData *_recieveData;
 }
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation HCBLEResponseBuffer
+@implementation ZZBLEResponseBuffer
 
 - (instancetype)init {
     if (self = [super init]) {

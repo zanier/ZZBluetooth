@@ -1,13 +1,13 @@
 //
-//  HCBLETaskError.h
+//  ZZBLETaskError.h
 //  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/21.
 //  Copyright © 2017年 HongYun. All rights reserved.
 //
 
-#ifndef HCBLETaskError_h
-#define HCBLETaskError_h
+#ifndef ZZBLETaskError_h
+#define ZZBLETaskError_h
 
 typedef NS_ENUM(NSInteger, ZZBLEErrorType) {
     
@@ -66,4 +66,4 @@ static NSError *ZZErrorWithTaskErrorType(ZZBLEErrorType errorType) {
 
 #pragma clang diagnostic pop
 
-#endif /* HCBLETaskError_h */
+#endif /* ZZBLETaskError_h */

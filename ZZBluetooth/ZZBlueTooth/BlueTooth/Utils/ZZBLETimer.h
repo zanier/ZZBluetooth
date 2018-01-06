@@ -1,6 +1,6 @@
 //
-//  HCBLETimer.h
-//  虹云智慧生活
+//  ZZBLETimer.h
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/25.
 //  Copyright © 2017年 HongYun. All rights reserved.
@@ -19,12 +19,12 @@ NS_ASSUME_NONNULL_BEGIN
  * It always fire on main thread.
  
  */
-@interface HCBLETimer : NSObject
+@interface ZZBLETimer : NSObject
 
-+ (HCBLETimer *)timerWithTimeInterval:(NSTimeInterval)interval
-                            target:(id)target
-                          selector:(SEL)selector
-                           repeats:(BOOL)repeats;
++ (ZZBLETimer *)timerWithTimeInterval:(NSTimeInterval)interval
+                               target:(id)target
+                             selector:(SEL)selector
+                              repeats:(BOOL)repeats;
 
 - (instancetype)initWithFireTime:(NSTimeInterval)start
                         interval:(NSTimeInterval)interval

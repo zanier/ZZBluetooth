@@ -1,24 +1,24 @@
 //
-//  HCBLEManager+Private.h
+//  ZZBLEManager+Private.h
 //  ZZBluetooth
 //
 //  Created by ZZ on 2017/10/9.
 //  Copyright © 2017年 zz. All rights reserved.
 //
 
-#import "HCBLEManager.h"
+#import "ZZBLEManager.h"
 #import "ZZBLETask.h"
 
 #ifdef DEBUG
-    #define HCLog(...)     \
-        if ([HCBLEManager shareInstance].logEnable) {\
-            NSLog(@"[HCBLE] %@", [NSString stringWithFormat:__VA_ARGS__]);\
+    #define ZZLog(...)     \
+        if ([ZZBLEManager shareInstance].logEnable) {\
+            NSLog(@"[ZZBLE] %@", [NSString stringWithFormat:__VA_ARGS__]);\
         }
 #else
-    #define HCLog(...)
+    #define ZZLog(...)
 #endif
 
-@interface HCBLEManager ()
+@interface ZZBLEManager ()
 
 - (void)dispatchTask:(ZZBLETask *)task;
 

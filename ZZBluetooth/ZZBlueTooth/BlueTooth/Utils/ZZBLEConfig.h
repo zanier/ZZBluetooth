@@ -1,13 +1,13 @@
 //
-//  HCBLEConfig.h
+//  ZZBLEConfig.h
 //  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/21.
 //  Copyright © 2017年 HongYun. All rights reserved.
 //
 
-#ifndef HCBLEConfig_h
-#define HCBLEConfig_h
+#ifndef ZZBLEConfig_h
+#define ZZBLEConfig_h
 
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "ZZBLETimer.h"
@@ -31,9 +31,9 @@ typedef struct {
     unsigned short ID_offset;
     unsigned short ID_length;
     
-} HCBLEHeaderLayout;
+} ZZBLEHeaderLayout;
 
-static const HCBLEHeaderLayout _layout =
+static const ZZBLEHeaderLayout _layout =
 {
     (unsigned short)8,
     
@@ -55,17 +55,17 @@ static const HCBLEHeaderLayout _layout =
 
 static NSString *const HAPIString = @"HAPI";
 
-static NSString *const HCBLEServiceUUID         = @"FFF0";
-static NSString *const HCBLECharacteristicUUID  = @"FFF1";
+static NSString *const ZZBLEServiceUUID         = @"FFF0";
+static NSString *const ZZBLECharacteristicUUID  = @"FFF1";
 
-static NSTimeInterval const HCBLEDefaultScanInterval = 5.0f;
-static NSTimeInterval const HCBLEDefaultConnectInterval = 5.0f;
-static NSTimeInterval const HCBLEDefaulTaskInterval = 5.0;
+static NSTimeInterval const ZZBLEDefaultScanInterval = 5.0f;
+static NSTimeInterval const ZZBLEDefaultConnectInterval = 5.0f;
+static NSTimeInterval const ZZBLEDefaulTaskInterval = 5.0;
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-function"
 
-static BOOL HCBLECheckValidRSSI(NSNumber *RSSI) {
+static BOOL ZZBLECheckValidRSSI(NSNumber *RSSI) {
     float rssi = [RSSI floatValue];
     if (rssi >= 0 || rssi < -90) {
         return NO;
@@ -73,7 +73,7 @@ static BOOL HCBLECheckValidRSSI(NSNumber *RSSI) {
     return YES;
 }
 
-static NSString *HCBLECentralSateDescription(NSInteger state) {
+static NSString *ZZBLECentralSateDescription(NSInteger state) {
     if (@available(iOS 10.0, *)) {
         switch (state) {
             case CBManagerStateUnknown:
@@ -122,4 +122,4 @@ static NSString *HCBLECentralSateDescription(NSInteger state) {
 #define isNotAnEmptyString(aString) (!isAnEmptyString(aString))
 #endif
 
-#endif /* HCBLEConfig_h */
+#endif /* ZZBLEConfig_h */

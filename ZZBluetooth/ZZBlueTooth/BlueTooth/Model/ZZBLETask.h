@@ -1,13 +1,13 @@
 //
-//  HYBLETask.h
-//  虹云智慧生活
+//  ZZBLETask.h
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/21.
 //  Copyright © 2017年 HongYun. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "HCBLETaskError.h"
+#import "ZZBLETaskError.h"
 #import "ZZBLEResponse.h"
 
 NS_ASSUME_NONNULL_BEGIN

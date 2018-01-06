@@ -1,6 +1,6 @@
 //
-//  HYBLEScanAction.h
-//  虹云智慧生活
+//  ZZBLEScanAction.h
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/25.
 //  Copyright © 2017年 HongYun. All rights reserved.
@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
-#import "HCBLEManager+Private.h"
-#import "HCBLEConfig.h"
+#import "ZZBLEManager+Private.h"
+#import "ZZBLEConfig.h"
 
 @class ZZBLEScanAction;
 
@@ -31,8 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, copy) NSString *targetName;
 
-@property (nullable, nonatomic, copy) HCBLEScanDidDiscover scanDidDiscover;
-@property (nullable, nonatomic, copy) HCBLEScanDidFinish scanDidFinsh;
+@property (nullable, nonatomic, copy) ZZBLEScanDidDiscover scanDidDiscover;
+@property (nullable, nonatomic, copy) ZZBLEScanDidFinish scanDidFinsh;
 
 @property (nonatomic, assign) BOOL didDiscover;
 

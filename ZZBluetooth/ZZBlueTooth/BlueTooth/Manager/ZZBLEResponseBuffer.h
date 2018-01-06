@@ -1,5 +1,5 @@
 //
-//  HCBLEResponseBuffer.h
+//  ZZBLEResponseBuffer.h
 //  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/26.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ZZBLEResponse.h"
 
-@interface HCBLEResponseBuffer : NSObject
+@interface ZZBLEResponseBuffer : NSObject
 
 - (void)clearBuffer;
 

@@ -1,23 +1,21 @@
 //
-//  HYBLETask.m
-//  虹云智慧生活
+//  ZZBLETask.m
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/21.
 //  Copyright © 2017年 HongYun. All rights reserved.
 //
 
-#import "HCBLETask+Private.h"
-#import "HCBLETaskError.h"
-#import "HCBLETimer.h"
-#import "HCBLEConfig.h"
+#import "ZZBLETask+Private.h"
+#import "ZZBLETaskError.h"
+#import "ZZBLETimer.h"
+#import "ZZBLEConfig.h"
 
 @interface ZZBLETask ()
 
 @property (nonatomic, copy) NSString *UUIDString;
 
-//@property (nonatomic, strong) HCBLERequest *request;
-
-@property (nonatomic, strong) HCBLETimer *timeoutTimer;
+@property (nonatomic, strong) ZZBLETimer *timeoutTimer;
 
 @property (nonatomic, assign) ZZBLETaskState state;
 
@@ -70,9 +68,9 @@
     
     [self stopTimer];
     // 开启超时定时器
-    NSTimeInterval timeoutInterval = (self.timeoutInterval > 0) ? self.timeoutInterval : HCBLEDefaulTaskInterval;
+    NSTimeInterval timeoutInterval = (self.timeoutInterval > 0) ? self.timeoutInterval : ZZBLEDefaulTaskInterval;
     
-    self.timeoutTimer = [HCBLETimer timerWithTimeInterval:timeoutInterval
+    self.timeoutTimer = [ZZBLETimer timerWithTimeInterval:timeoutInterval
                                                    target:self
                                                  selector:@selector(taskDidTimeout:)
                                                   repeats:NO];

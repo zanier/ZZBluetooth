@@ -1,19 +1,19 @@
 //
-//  HYBLETimer.m
-//  虹云智慧生活
+//  ZZBLETimer.m
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/25.
 //  Copyright © 2017年 HongYun. All rights reserved.
 //
 
-#import "HCBLETimer.h"
+#import "ZZBLETimer.h"
 #import <pthread.h>
 
 #define LOCK(...) dispatch_semaphore_wait(_lock, DISPATCH_TIME_FOREVER); \
 __VA_ARGS__; \
 dispatch_semaphore_signal(_lock);
 
-@implementation HCBLETimer {
+@implementation ZZBLETimer {
     BOOL _valid;
     NSTimeInterval _timeInterval;
     BOOL _repeats;
@@ -23,7 +23,7 @@ dispatch_semaphore_signal(_lock);
     dispatch_semaphore_t _lock;
 }
 
-+ (HCBLETimer *)timerWithTimeInterval:(NSTimeInterval)interval
++ (ZZBLETimer *)timerWithTimeInterval:(NSTimeInterval)interval
                                target:(id)target
                              selector:(SEL)selector
                               repeats:(BOOL)repeats {
@@ -32,7 +32,7 @@ dispatch_semaphore_signal(_lock);
 }
 
 - (instancetype)init {
-    @throw [NSException exceptionWithName:@"HYBLETimer init error" reason:@"Use the designated initializer to init." userInfo:nil];
+    @throw [NSException exceptionWithName:@"ZZBLETimer init error" reason:@"Use the designated initializer to init." userInfo:nil];
     return [self initWithFireTime:0 interval:0 target:self selector:@selector(invalidate) repeats:NO];
 }
 

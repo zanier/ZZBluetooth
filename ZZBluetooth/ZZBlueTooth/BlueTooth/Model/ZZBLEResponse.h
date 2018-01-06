@@ -1,6 +1,6 @@
 //
 //  ZZBLEResponse.h
-//  虹云智慧生活
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/26.
 //  Copyright © 2017年 HongYun. All rights reserved.

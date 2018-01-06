@@ -1,14 +1,14 @@
 //
-//  NSData+HYTransform.m
-//  HYBLEDemo
+//  NSData+ZZTransform.m
+//  ZZBluetooth
 //
 //  Created by ZZ on 2017/9/29.
 //  Copyright © 2017年 zz. All rights reserved.
 //
 
-#import "NSData+HYTransform.h"
+#import "NSData+ZZTransform.h"
 
-@implementation NSData (HYTransform)
+@implementation NSData (ZZTransform)
 
 - (NSUInteger)integerValue {
     if (self.length > 8) {
