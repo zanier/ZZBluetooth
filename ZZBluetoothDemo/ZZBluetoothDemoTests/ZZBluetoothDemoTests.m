@@ -1,27 +1,25 @@
 //
-//  ZZBluetoothTests.m
-//  ZZBluetoothTests
+//  ZZBluetoothDemoTests.m
+//  ZZBluetoothDemoTests
 //
-//  Created by ZZ on 2018/1/6.
-//  Copyright © 2018年 zz. All rights reserved.
+//  Created by ZZ on 2020/3/10.
+//  Copyright © 2020 zz. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface ZZBluetoothTests : XCTestCase
+@interface ZZBluetoothDemoTests : XCTestCase
 
 @end
 
-@implementation ZZBluetoothTests
+@implementation ZZBluetoothDemoTests
 
 - (void)setUp {
-    [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
 }
 
 - (void)testExample {

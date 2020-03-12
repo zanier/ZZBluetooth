@@ -1,0 +1,705 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3ACC6E7E2417D0D60061971E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6E7D2417D0D60061971E /* AppDelegate.m */; };
+		3ACC6E812417D0D60061971E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6E802417D0D60061971E /* SceneDelegate.m */; };
+		3ACC6E842417D0D60061971E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6E832417D0D60061971E /* ViewController.m */; };
+		3ACC6E872417D0D60061971E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ACC6E852417D0D60061971E /* Main.storyboard */; };
+		3ACC6E892417D0D90061971E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ACC6E882417D0D90061971E /* Assets.xcassets */; };
+		3ACC6E8C2417D0D90061971E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ACC6E8A2417D0D90061971E /* LaunchScreen.storyboard */; };
+		3ACC6E8F2417D0D90061971E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6E8E2417D0D90061971E /* main.m */; };
+		3ACC6E992417D0D90061971E /* ZZBluetoothDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6E982417D0D90061971E /* ZZBluetoothDemoTests.m */; };
+		3ACC6EA42417D0D90061971E /* ZZBluetoothDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6EA32417D0D90061971E /* ZZBluetoothDemoUITests.m */; };
+		3ACC6F182417D1770061971E /* NSString+ZZTranform.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6EF92417D1770061971E /* NSString+ZZTranform.m */; };
+		3ACC6F192417D1770061971E /* NSData+ZZTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6EFA2417D1770061971E /* NSData+ZZTransform.m */; };
+		3ACC6F1A2417D1770061971E /* ZZBLETimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6EFB2417D1770061971E /* ZZBLETimer.m */; };
+		3ACC6F1B2417D1770061971E /* ZZBLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6EFF2417D1770061971E /* ZZBLEManager.m */; };
+		3ACC6F1C2417D1770061971E /* ZZBLEConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6F032417D1770061971E /* ZZBLEConnection.m */; };
+		3ACC6F1D2417D1770061971E /* ZZBLEResponseBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6F062417D1770061971E /* ZZBLEResponseBuffer.m */; };
+		3ACC6F1E2417D1770061971E /* ZZBLEScanAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6F0C2417D1770061971E /* ZZBLEScanAction.m */; };
+		3ACC6F1F2417D1780061971E /* ZZBLEResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6F0D2417D1770061971E /* ZZBLEResponse.m */; };
+		3ACC6F202417D1780061971E /* ZZBLETask.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6F0E2417D1770061971E /* ZZBLETask.m */; };
+		3ACC6F212417D1780061971E /* ZZBLERequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACC6F112417D1770061971E /* ZZBLERequest.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3ACC6E952417D0D90061971E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3ACC6E712417D0D60061971E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3ACC6E782417D0D60061971E;
+			remoteInfo = ZZBluetoothDemo;
+		};
+		3ACC6EA02417D0D90061971E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3ACC6E712417D0D60061971E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3ACC6E782417D0D60061971E;
+			remoteInfo = ZZBluetoothDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3ACC6E792417D0D60061971E /* ZZBluetoothDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZBluetoothDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ACC6E7C2417D0D60061971E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3ACC6E7D2417D0D60061971E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3ACC6E7F2417D0D60061971E /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		3ACC6E802417D0D60061971E /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		3ACC6E822417D0D60061971E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3ACC6E832417D0D60061971E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3ACC6E862417D0D60061971E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3ACC6E882417D0D90061971E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3ACC6E8B2417D0D90061971E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3ACC6E8D2417D0D90061971E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3ACC6E8E2417D0D90061971E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3ACC6E942417D0D90061971E /* ZZBluetoothDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZBluetoothDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ACC6E982417D0D90061971E /* ZZBluetoothDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZBluetoothDemoTests.m; sourceTree = "<group>"; };
+		3ACC6E9A2417D0D90061971E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3ACC6E9F2417D0D90061971E /* ZZBluetoothDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZZBluetoothDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ACC6EA32417D0D90061971E /* ZZBluetoothDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZZBluetoothDemoUITests.m; sourceTree = "<group>"; };
+		3ACC6EA52417D0D90061971E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3ACC6EF62417D1770061971E /* ZZBLETaskError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLETaskError.h; sourceTree = "<group>"; };
+		3ACC6EF72417D1770061971E /* ZZBLEConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLEConfig.h; sourceTree = "<group>"; };
+		3ACC6EF82417D1770061971E /* ZZBLETimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLETimer.h; sourceTree = "<group>"; };
+		3ACC6EF92417D1770061971E /* NSString+ZZTranform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZZTranform.m"; sourceTree = "<group>"; };
+		3ACC6EFA2417D1770061971E /* NSData+ZZTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ZZTransform.m"; sourceTree = "<group>"; };
+		3ACC6EFB2417D1770061971E /* ZZBLETimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLETimer.m; sourceTree = "<group>"; };
+		3ACC6EFC2417D1770061971E /* NSData+ZZTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ZZTransform.h"; sourceTree = "<group>"; };
+		3ACC6EFD2417D1770061971E /* NSString+ZZTranform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZZTranform.h"; sourceTree = "<group>"; };
+		3ACC6EFF2417D1770061971E /* ZZBLEManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLEManager.m; sourceTree = "<group>"; };
+		3ACC6F002417D1770061971E /* ZZBLEConnection+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZZBLEConnection+Private.h"; sourceTree = "<group>"; };
+		3ACC6F012417D1770061971E /* ZZBLEResponseBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLEResponseBuffer.h; sourceTree = "<group>"; };
+		3ACC6F022417D1770061971E /* ZZBLEManager+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZZBLEManager+Private.h"; sourceTree = "<group>"; };
+		3ACC6F032417D1770061971E /* ZZBLEConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLEConnection.m; sourceTree = "<group>"; };
+		3ACC6F042417D1770061971E /* ZZBLEManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLEManager.h; sourceTree = "<group>"; };
+		3ACC6F052417D1770061971E /* ZZBLEConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLEConnection.h; sourceTree = "<group>"; };
+		3ACC6F062417D1770061971E /* ZZBLEResponseBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLEResponseBuffer.m; sourceTree = "<group>"; };
+		3ACC6F082417D1770061971E /* ZZBLEResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLEResponse.h; sourceTree = "<group>"; };
+		3ACC6F092417D1770061971E /* ZZBLERequest+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZZBLERequest+Private.h"; sourceTree = "<group>"; };
+		3ACC6F0A2417D1770061971E /* ZZBLETask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLETask.h; sourceTree = "<group>"; };
+		3ACC6F0B2417D1770061971E /* ZZBLERequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLERequest.h; sourceTree = "<group>"; };
+		3ACC6F0C2417D1770061971E /* ZZBLEScanAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLEScanAction.m; sourceTree = "<group>"; };
+		3ACC6F0D2417D1770061971E /* ZZBLEResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLEResponse.m; sourceTree = "<group>"; };
+		3ACC6F0E2417D1770061971E /* ZZBLETask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLETask.m; sourceTree = "<group>"; };
+		3ACC6F0F2417D1770061971E /* ZZBLETask+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZZBLETask+Private.h"; sourceTree = "<group>"; };
+		3ACC6F102417D1770061971E /* ZZBLEScanAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBLEScanAction.h; sourceTree = "<group>"; };
+		3ACC6F112417D1770061971E /* ZZBLERequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBLERequest.m; sourceTree = "<group>"; };
+		3ACC6F172417D1770061971E /* ZZBlueTooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBlueTooth.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3ACC6E762417D0D60061971E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ACC6E912417D0D90061971E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ACC6E9C2417D0D90061971E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3ACC6E702417D0D60061971E = {
+			isa = PBXGroup;
+			children = (
+				3ACC6EF32417D1770061971E /* ZZBlueTooth */,
+				3ACC6E7B2417D0D60061971E /* ZZBluetoothDemo */,
+				3ACC6E972417D0D90061971E /* ZZBluetoothDemoTests */,
+				3ACC6EA22417D0D90061971E /* ZZBluetoothDemoUITests */,
+				3ACC6E7A2417D0D60061971E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3ACC6E7A2417D0D60061971E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3ACC6E792417D0D60061971E /* ZZBluetoothDemo.app */,
+				3ACC6E942417D0D90061971E /* ZZBluetoothDemoTests.xctest */,
+				3ACC6E9F2417D0D90061971E /* ZZBluetoothDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3ACC6E7B2417D0D60061971E /* ZZBluetoothDemo */ = {
+			isa = PBXGroup;
+			children = (
+				3ACC6E7C2417D0D60061971E /* AppDelegate.h */,
+				3ACC6E7D2417D0D60061971E /* AppDelegate.m */,
+				3ACC6E7F2417D0D60061971E /* SceneDelegate.h */,
+				3ACC6E802417D0D60061971E /* SceneDelegate.m */,
+				3ACC6E822417D0D60061971E /* ViewController.h */,
+				3ACC6E832417D0D60061971E /* ViewController.m */,
+				3ACC6E852417D0D60061971E /* Main.storyboard */,
+				3ACC6E882417D0D90061971E /* Assets.xcassets */,
+				3ACC6E8A2417D0D90061971E /* LaunchScreen.storyboard */,
+				3ACC6E8D2417D0D90061971E /* Info.plist */,
+				3ACC6E8E2417D0D90061971E /* main.m */,
+			);
+			path = ZZBluetoothDemo;
+			sourceTree = "<group>";
+		};
+		3ACC6E972417D0D90061971E /* ZZBluetoothDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				3ACC6E982417D0D90061971E /* ZZBluetoothDemoTests.m */,
+				3ACC6E9A2417D0D90061971E /* Info.plist */,
+			);
+			path = ZZBluetoothDemoTests;
+			sourceTree = "<group>";
+		};
+		3ACC6EA22417D0D90061971E /* ZZBluetoothDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3ACC6EA32417D0D90061971E /* ZZBluetoothDemoUITests.m */,
+				3ACC6EA52417D0D90061971E /* Info.plist */,
+			);
+			path = ZZBluetoothDemoUITests;
+			sourceTree = "<group>";
+		};
+		3ACC6EF32417D1770061971E /* ZZBlueTooth */ = {
+			isa = PBXGroup;
+			children = (
+				3ACC6F172417D1770061971E /* ZZBlueTooth.h */,
+				3ACC6EF42417D1770061971E /* BlueTooth */,
+			);
+			name = ZZBlueTooth;
+			path = ../ZZBlueTooth;
+			sourceTree = "<group>";
+		};
+		3ACC6EF42417D1770061971E /* BlueTooth */ = {
+			isa = PBXGroup;
+			children = (
+				3ACC6EF52417D1770061971E /* Utils */,
+				3ACC6EFE2417D1770061971E /* Manager */,
+				3ACC6F072417D1770061971E /* Model */,
+			);
+			path = BlueTooth;
+			sourceTree = "<group>";
+		};
+		3ACC6EF52417D1770061971E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3ACC6EF62417D1770061971E /* ZZBLETaskError.h */,
+				3ACC6EF72417D1770061971E /* ZZBLEConfig.h */,
+				3ACC6EF82417D1770061971E /* ZZBLETimer.h */,
+				3ACC6EFB2417D1770061971E /* ZZBLETimer.m */,
+				3ACC6EFC2417D1770061971E /* NSData+ZZTransform.h */,
+				3ACC6EFA2417D1770061971E /* NSData+ZZTransform.m */,
+				3ACC6EFD2417D1770061971E /* NSString+ZZTranform.h */,
+				3ACC6EF92417D1770061971E /* NSString+ZZTranform.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3ACC6EFE2417D1770061971E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				3ACC6F022417D1770061971E /* ZZBLEManager+Private.h */,
+				3ACC6F042417D1770061971E /* ZZBLEManager.h */,
+				3ACC6EFF2417D1770061971E /* ZZBLEManager.m */,
+				3ACC6F002417D1770061971E /* ZZBLEConnection+Private.h */,
+				3ACC6F052417D1770061971E /* ZZBLEConnection.h */,
+				3ACC6F032417D1770061971E /* ZZBLEConnection.m */,
+				3ACC6F012417D1770061971E /* ZZBLEResponseBuffer.h */,
+				3ACC6F062417D1770061971E /* ZZBLEResponseBuffer.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		3ACC6F072417D1770061971E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3ACC6F082417D1770061971E /* ZZBLEResponse.h */,
+				3ACC6F092417D1770061971E /* ZZBLERequest+Private.h */,
+				3ACC6F0A2417D1770061971E /* ZZBLETask.h */,
+				3ACC6F0B2417D1770061971E /* ZZBLERequest.h */,
+				3ACC6F0C2417D1770061971E /* ZZBLEScanAction.m */,
+				3ACC6F0D2417D1770061971E /* ZZBLEResponse.m */,
+				3ACC6F0E2417D1770061971E /* ZZBLETask.m */,
+				3ACC6F0F2417D1770061971E /* ZZBLETask+Private.h */,
+				3ACC6F102417D1770061971E /* ZZBLEScanAction.h */,
+				3ACC6F112417D1770061971E /* ZZBLERequest.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3ACC6E782417D0D60061971E /* ZZBluetoothDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3ACC6EA82417D0D90061971E /* Build configuration list for PBXNativeTarget "ZZBluetoothDemo" */;
+			buildPhases = (
+				3ACC6E752417D0D60061971E /* Sources */,
+				3ACC6E762417D0D60061971E /* Frameworks */,
+				3ACC6E772417D0D60061971E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZZBluetoothDemo;
+			productName = ZZBluetoothDemo;
+			productReference = 3ACC6E792417D0D60061971E /* ZZBluetoothDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3ACC6E932417D0D90061971E /* ZZBluetoothDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3ACC6EAB2417D0D90061971E /* Build configuration list for PBXNativeTarget "ZZBluetoothDemoTests" */;
+			buildPhases = (
+				3ACC6E902417D0D90061971E /* Sources */,
+				3ACC6E912417D0D90061971E /* Frameworks */,
+				3ACC6E922417D0D90061971E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3ACC6E962417D0D90061971E /* PBXTargetDependency */,
+			);
+			name = ZZBluetoothDemoTests;
+			productName = ZZBluetoothDemoTests;
+			productReference = 3ACC6E942417D0D90061971E /* ZZBluetoothDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3ACC6E9E2417D0D90061971E /* ZZBluetoothDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3ACC6EAE2417D0D90061971E /* Build configuration list for PBXNativeTarget "ZZBluetoothDemoUITests" */;
+			buildPhases = (
+				3ACC6E9B2417D0D90061971E /* Sources */,
+				3ACC6E9C2417D0D90061971E /* Frameworks */,
+				3ACC6E9D2417D0D90061971E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3ACC6EA12417D0D90061971E /* PBXTargetDependency */,
+			);
+			name = ZZBluetoothDemoUITests;
+			productName = ZZBluetoothDemoUITests;
+			productReference = 3ACC6E9F2417D0D90061971E /* ZZBluetoothDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3ACC6E712417D0D60061971E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = zz;
+				TargetAttributes = {
+					3ACC6E782417D0D60061971E = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					3ACC6E932417D0D90061971E = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 3ACC6E782417D0D60061971E;
+					};
+					3ACC6E9E2417D0D90061971E = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 3ACC6E782417D0D60061971E;
+					};
+				};
+			};
+			buildConfigurationList = 3ACC6E742417D0D60061971E /* Build configuration list for PBXProject "ZZBluetoothDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3ACC6E702417D0D60061971E;
+			productRefGroup = 3ACC6E7A2417D0D60061971E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3ACC6E782417D0D60061971E /* ZZBluetoothDemo */,
+				3ACC6E932417D0D90061971E /* ZZBluetoothDemoTests */,
+				3ACC6E9E2417D0D90061971E /* ZZBluetoothDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3ACC6E772417D0D60061971E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ACC6E8C2417D0D90061971E /* LaunchScreen.storyboard in Resources */,
+				3ACC6E892417D0D90061971E /* Assets.xcassets in Resources */,
+				3ACC6E872417D0D60061971E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ACC6E922417D0D90061971E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ACC6E9D2417D0D90061971E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3ACC6E752417D0D60061971E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ACC6F1E2417D1770061971E /* ZZBLEScanAction.m in Sources */,
+				3ACC6E842417D0D60061971E /* ViewController.m in Sources */,
+				3ACC6E7E2417D0D60061971E /* AppDelegate.m in Sources */,
+				3ACC6F182417D1770061971E /* NSString+ZZTranform.m in Sources */,
+				3ACC6F1F2417D1780061971E /* ZZBLEResponse.m in Sources */,
+				3ACC6F212417D1780061971E /* ZZBLERequest.m in Sources */,
+				3ACC6F1C2417D1770061971E /* ZZBLEConnection.m in Sources */,
+				3ACC6F1B2417D1770061971E /* ZZBLEManager.m in Sources */,
+				3ACC6E8F2417D0D90061971E /* main.m in Sources */,
+				3ACC6F1D2417D1770061971E /* ZZBLEResponseBuffer.m in Sources */,
+				3ACC6E812417D0D60061971E /* SceneDelegate.m in Sources */,
+				3ACC6F192417D1770061971E /* NSData+ZZTransform.m in Sources */,
+				3ACC6F202417D1780061971E /* ZZBLETask.m in Sources */,
+				3ACC6F1A2417D1770061971E /* ZZBLETimer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ACC6E902417D0D90061971E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ACC6E992417D0D90061971E /* ZZBluetoothDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ACC6E9B2417D0D90061971E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ACC6EA42417D0D90061971E /* ZZBluetoothDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3ACC6E962417D0D90061971E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3ACC6E782417D0D60061971E /* ZZBluetoothDemo */;
+			targetProxy = 3ACC6E952417D0D90061971E /* PBXContainerItemProxy */;
+		};
+		3ACC6EA12417D0D90061971E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3ACC6E782417D0D60061971E /* ZZBluetoothDemo */;
+			targetProxy = 3ACC6EA02417D0D90061971E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3ACC6E852417D0D60061971E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3ACC6E862417D0D60061971E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3ACC6E8A2417D0D90061971E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3ACC6E8B2417D0D90061971E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3ACC6EA62417D0D90061971E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3ACC6EA72417D0D90061971E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3ACC6EA92417D0D90061971E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56K2M8B4JP;
+				INFOPLIST_FILE = ZZBluetoothDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zz.ZZBluetoothDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3ACC6EAA2417D0D90061971E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56K2M8B4JP;
+				INFOPLIST_FILE = ZZBluetoothDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zz.ZZBluetoothDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3ACC6EAC2417D0D90061971E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56K2M8B4JP;
+				INFOPLIST_FILE = ZZBluetoothDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zz.ZZBluetoothDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZZBluetoothDemo.app/ZZBluetoothDemo";
+			};
+			name = Debug;
+		};
+		3ACC6EAD2417D0D90061971E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56K2M8B4JP;
+				INFOPLIST_FILE = ZZBluetoothDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zz.ZZBluetoothDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZZBluetoothDemo.app/ZZBluetoothDemo";
+			};
+			name = Release;
+		};
+		3ACC6EAF2417D0D90061971E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56K2M8B4JP;
+				INFOPLIST_FILE = ZZBluetoothDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zz.ZZBluetoothDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZZBluetoothDemo;
+			};
+			name = Debug;
+		};
+		3ACC6EB02417D0D90061971E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56K2M8B4JP;
+				INFOPLIST_FILE = ZZBluetoothDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = zz.ZZBluetoothDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZZBluetoothDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3ACC6E742417D0D60061971E /* Build configuration list for PBXProject "ZZBluetoothDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ACC6EA62417D0D90061971E /* Debug */,
+				3ACC6EA72417D0D90061971E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3ACC6EA82417D0D90061971E /* Build configuration list for PBXNativeTarget "ZZBluetoothDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ACC6EA92417D0D90061971E /* Debug */,
+				3ACC6EAA2417D0D90061971E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3ACC6EAB2417D0D90061971E /* Build configuration list for PBXNativeTarget "ZZBluetoothDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ACC6EAC2417D0D90061971E /* Debug */,
+				3ACC6EAD2417D0D90061971E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3ACC6EAE2417D0D90061971E /* Build configuration list for PBXNativeTarget "ZZBluetoothDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ACC6EAF2417D0D90061971E /* Debug */,
+				3ACC6EB02417D0D90061971E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3ACC6E712417D0D60061971E /* Project object */;
+}

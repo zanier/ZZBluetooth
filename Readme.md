@@ -1,31 +1,30 @@
 ## ZZBluetooth
 
-虹云蓝牙设备 iOS_SDK v1.0.1，2017-10-15。
+​		根据公司业务封装的蓝牙通用组件，在 **CoreBluetooth** 的基础上提供了更加便捷直观的蓝牙使用方法，包括定时扫描、定向连接、数据通信等功能。
 
-## 1. 如何使用
+## 1. 使用前
 
-1. 导入**\<ZZBluetooth\>**框架。
-2. 导入**\<CoreBluetooth/CoreBluetooth.h\>**框架。
-3. 导入头文件**#import\<ZZBluetooth/ZZBluetooth.h\>**
-4. 在**info.plist**文件中添加“**Privacy - Bluetooth Peripheral Usage Description**”一项，value为应用向用户申请蓝牙使用权限的描述。
+* 在工程中导入 **\<CoreBluetooth/CoreBluetooth.h\>** 框架。
+
+* 在 **info.plist** 文件中添加 **Privacy - Bluetooth Peripheral Usage Description** 一项，value为应用向用户申请蓝牙使用权限的描述。
+
+## 2. 使用
+
+### 2.1 ZZBLEManager
+
+蓝牙实例化操作对象，用于实现蓝牙的扫描、连接、数据发送等操作。
+
+**获取单例对象**
+
+通过 `shareInstance` 方法获取单例对象，利用该单例对象进行扫描、连接等操作。
+
+在第一次生成单例使用蓝牙时，若当前蓝牙为开启状态，则系统会对蓝牙进行初始化操作，该操作需要持续几秒，在初始化过程中若进行蓝牙操作则会失败。为避免此情况，建议在APP启动时`application:didFinishLaunchingWithOptions:`或者在使用前提前创建该单例对象，以提前进行蓝牙初始化。
 
 
-## 2. ZZBLEManager
-
-蓝牙操作对象，用于实现蓝牙的扫描、连接等操作。
-
-### 2.1 获取单例对象
-通过`shareInstance`方法获取单例对象，利用该单例对象进行扫描、连接等操作。
-
-
-```
-+ (instancetype)shareInstance;
-
+```objective-c
+// 获取单例对象
 [ZZBLEManager shareInstance];
-
 ```
-
-在生成单例时，若当前蓝牙为开启状态，则会对蓝牙进行初始化操作，该操作需要持续几秒，在初始化过程中不能对蓝牙进行操作。建议在`application:didFinishLaunchingWithOptions:`创建该单例对象。
 
 
 ### 2.2 扫描设备
@@ -66,7 +65,7 @@ typedef void(^ZZBLEScanDidFinish)(NSString *targetName, BOOL didDiscover);
 
 ### 2.4 连接设备
 
-```
+```objective-c
 /**
  连接蓝牙设备
  */
@@ -87,7 +86,7 @@ typedef void(^ZZBLEScanDidFinish)(NSString *targetName, BOOL didDiscover);
 
 ### 2.5 断开连接
 
-```
+```objective-c
 - (void)cancelConnectionWithUUID:(NSString *)uuidString;
 - (void)cancelAllConnection;
 ```
@@ -102,7 +101,7 @@ typedef void(^ZZBLEScanDidFinish)(NSString *targetName, BOOL didDiscover);
 
 例如：
 
-```
+```objective-c
 /**
  1.1 查询门锁的信息，可获得门锁电量、门锁保存的开门记录数和门锁时间是否准确的信息。门锁时间误差超过5分钟即认为不准确。
  
@@ -124,7 +123,7 @@ typedef void(^ZZBLEScanDidFinish)(NSString *targetName, BOOL didDiscover);
 
 演示：
 
-```
+```objective-c
 NSString *uuidString = @"****";
 
 [[ZZBLEManager shareInstance] connectWithUUID:uuidString success:^(CBPeripheral * _Nonnull peripheral, CBCharacteristic * _Nonnull characteristic) {
